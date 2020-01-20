@@ -1,0 +1,88 @@
+html,
+body {
+  margin: 0 auto;
+  width: 1300px;
+  height: 600px;
+}
+
+body {
+  display: flex;
+}
+body:nth-child(4n + 1) {
+  filter: grayscale(100%);
+  background-image: url("praha1.jfif");
+  background-size: cover;
+  max-height: 600px;
+}
+body:nth-child(4n + 2) {
+  filter: sepia(70%);
+  background-image: url("praha2.jfif");
+  background-size: cover;
+  max-height: 600px;
+}
+body:nth-child(4n + 3) {
+  filter: saturate(90%);
+  background-image: url("praha3.jfif");
+  background-size: cover;
+  max-height: 600px;
+}
+body:nth-child(4n + 4) {
+  filter: contrast(80%);
+  background-image: url("praha4.jpg");
+  background-size: cover;
+  max-height: 600px;
+}
+@media (max-width: 1084px) {
+  body {
+    flex-direction: column;
+  }
+}
+
+.img-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 100%;
+  box-sizing: border-box;
+  flex: 1 1 548px;
+  transition: .5s linear;
+  overflow: hidden;
+}
+.img-container p {
+  color: black;
+  font-weight: bolder;
+  font-size: 1px;
+  margin-bottom: -200px;
+  transition: ease-in 0.5s;
+  border-bottom: 5px solid black;
+  border-top: 5px solid black;
+}
+.img-container:hover p {
+  transform: translateY(-250px);
+  font-size: 60px;
+}
+.img-container:nth-child(4n + 1) {
+  background-color: yellow;
+}
+.img-container:nth-child(4n + 2) {
+  background-color: green;
+}
+.img-container:nth-child(4n + 3) {
+  background-color: pink;
+}
+.img-container:nth-child(4n + 4) {
+  background-color: violet;
+}
+.img-container:hover {
+  position: relative;
+  flex-grow: 5;
+  flex-shrink: 1;
+  flex-basis: 1300px;
+  transform: scaleX(1);
+}
+.img-container:not(:hover) {
+  flex-grow: 1;
+  flex-shrink: 5;
+}
+
+/*# sourceMappingURL=main.css.map */

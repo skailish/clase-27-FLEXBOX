@@ -1,0 +1,88 @@
+$filters: grayscale(100%),
+sepia(70%),
+saturate(90%),
+contrast(80%);
+
+$imgs: 'praha1.jfif',
+'praha2.jfif',
+'praha3.jfif',
+'praha4.jpg';
+
+$background:yellow,
+green,
+pink,
+violet;
+
+html,
+body {
+    margin: 0 auto;
+    width: 1300px;
+    height: 600px;
+}
+
+body {
+    display: flex;
+
+    @for $i from 1 through length($filters) {
+        &:nth-child(#{length($filters)}n + #{$i}) {
+            filter: nth($filters, $i);
+            background-image: url("#{nth($imgs, $i)}");
+            background-size: cover;
+            max-height: 600px;
+        }
+    }
+
+    @media (max-width: 1084px) {
+        flex-direction: column;
+
+    }
+}
+
+.img-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 100%;
+    box-sizing: border-box;
+    flex: 1 1 548px;
+    transition: .5s linear;
+    overflow: hidden;
+
+    p {
+        color: black;
+        font-weight: bolder;
+        font-size: 1px;
+        margin-bottom: -200px;
+        transition: ease-in 0.5s;
+        border-bottom: 5px solid black;
+        border-top:  5px solid black;
+    }
+
+    &:hover p {
+        transform: translateY(-250px);
+        font-size: 60px;
+    }
+
+
+
+    @for $i from 1 through length($filters) {
+        &:nth-child(#{length($background)}n + #{$i}) {
+            background-color: nth($background, $i);
+        }
+    }
+
+    &:hover {
+        position: relative;
+        flex-grow: 5;
+        flex-shrink: 1;
+        flex-basis: 1300px;
+        transform: scaleX(1);
+    }
+
+    &:not(:hover) {
+        flex-grow: 1;
+        flex-shrink: 5;
+    }
+
+
+}
