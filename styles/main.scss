@@ -25,7 +25,7 @@ body {
     justify-content: center;
     align-items: stretch;
 
-    
+
     @media (max-width: 1084px) {
         flex-direction: column;
         max-width: 1084px;
@@ -38,28 +38,51 @@ body {
     align-items: center;
     height: 600px;
     flex: 1 1 208px;
-    transition: linear 0.5s;
+    transition: linear 0.3s;
     overflow: hidden;
-    
-    p {
-        color: black;
-        font-weight: bolder;
-        font-size: 0px;
-        transition: ease-in 0.5s;
+
+    .text-wrapper::after {
+        transition: ease-in 0.3s;
+        transition-delay: 0.2s;
 
     }
 
-    &:hover p {
+
+    &:hover {
+        position: relative;
+        flex-grow: 5;
+        flex-shrink: 1;
+        transform: scaleX(1);
         
-        font-size: 70px;
+        .text-wrapper::after {
+            content: "| Praha |";
+            position: absolute;
+            color: white;
+            font-size: 70px;
+            right: 50px;
+            top: 600px;
+            transform: translateY(-150px);
+        }
     }
+    
+    &:not(:hover) {
+        flex: 1 5;
+        
+        .text-wrapper:after {
+            content: "";
+            position: absolute;
+            color: white;
+            font-size: 70px;
+        }
 
+    }
 
 
     @for $i from 1 through 4 {
         &:nth-child(#{$i}) {
             background-image: url("../#{nth($imgs, $i)}");
-            background-color: nth($background, $i);            background-size: cover;
+            background-color: nth($background, $i);
+            background-size: cover;
             background-repeat: no-repeat;
             filter: blur(2px);
             border: 3px solid white;
@@ -75,17 +98,6 @@ body {
         }
     }
 
-    &:hover {
-        position: relative;
-        flex-grow: 5;
-        flex-shrink: 1;
-        transform: scaleX(1);
-    }
-
-    &:not(:hover) {
-        flex: 1 5;
-
-    }
 
 
 }
