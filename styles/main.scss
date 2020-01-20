@@ -18,6 +18,11 @@ body {
     margin: 0 auto;
     width: 1300px;
     height: 600px;
+
+    @media (max-width: 1084px) {
+        width: 1084px;
+        height: 600px;        
+    }
 }
 
 body {
@@ -28,7 +33,6 @@ body {
 
     @media (max-width: 1084px) {
         flex-direction: column;
-        max-width: 1084px;
     }
 }
 
@@ -43,7 +47,7 @@ body {
 
     .text-wrapper::after {
         transition: ease-in 0.3s;
-        transition-delay: 0.2s;
+        transition-delay: 0.1s;
 
     }
 
@@ -62,6 +66,11 @@ body {
             right: 50px;
             top: 600px;
             transform: translateY(-150px);
+
+            @media (max-width: 1084px) {
+                transform: translateY(-350px);
+                
+            }
         }
     }
     

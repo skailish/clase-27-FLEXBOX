@@ -4,6 +4,13 @@ body {
   width: 1300px;
   height: 600px;
 }
+@media (max-width: 1084px) {
+  html,
+  body {
+    width: 1084px;
+    height: 600px;
+  }
+}
 
 body {
   display: flex;
@@ -13,7 +20,6 @@ body {
 @media (max-width: 1084px) {
   body {
     flex-direction: column;
-    max-width: 1084px;
   }
 }
 
@@ -28,7 +34,7 @@ body {
 }
 .img-container .text-wrapper::after {
   transition: ease-in 0.3s;
-  transition-delay: 0.2s;
+  transition-delay: 0.1s;
 }
 .img-container:hover {
   position: relative;
@@ -44,6 +50,11 @@ body {
   right: 50px;
   top: 600px;
   transform: translateY(-150px);
+}
+@media (max-width: 1084px) {
+  .img-container:hover .text-wrapper::after {
+    transform: translateY(-350px);
+  }
 }
 .img-container:not(:hover) {
   flex: 1 5;
