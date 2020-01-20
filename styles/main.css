@@ -29,49 +29,68 @@ body {
 .img-container p {
   color: black;
   font-weight: bolder;
-  font-size: 1px;
-  margin-bottom: -200px;
+  font-size: 0px;
   transition: ease-in 0.5s;
 }
 .img-container:hover p {
-  transform: translateY(-250px);
   font-size: 70px;
 }
 .img-container:nth-child(1) {
-  background-image: url("praha1.jfif");
+  background-image: url("../praha1.jfif");
   background-color: yellow;
-  background-size: 100%;
-  filter: grayscale(100%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: blur(2px);
+  border: 3px solid white;
+  box-sizing: border-box;
 }
 .img-container:nth-child(2) {
-  background-image: url("praha2.jfif");
+  background-image: url("../praha2.jfif");
   background-color: green;
-  background-size: 100%;
-  filter: sepia(70%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: blur(2px);
+  border: 3px solid white;
+  box-sizing: border-box;
 }
 .img-container:nth-child(3) {
-  background-image: url("praha3.jfif");
+  background-image: url("../praha3.jfif");
   background-color: pink;
-  background-size: 100%;
-  filter: saturate(90%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: blur(2px);
+  border: 3px solid white;
+  box-sizing: border-box;
 }
 .img-container:nth-child(4) {
-  background-image: url("praha4.jpg");
+  background-image: url("../praha4.jpg");
   background-color: violet;
-  background-size: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: blur(2px);
+  border: 3px solid white;
+  box-sizing: border-box;
+}
+.img-container:nth-child(1):hover {
+  filter: grayscale(70%);
+}
+.img-container:nth-child(2):hover {
+  filter: sepia(70%);
+}
+.img-container:nth-child(3):hover {
+  filter: saturate(90%);
+}
+.img-container:nth-child(4):hover {
   filter: contrast(80%);
 }
 .img-container:hover {
   position: relative;
   flex-grow: 5;
   flex-shrink: 1;
-  flex-basis: 1300px;
   transform: scaleX(1);
 }
 .img-container:not(:hover) {
-  flex-grow: 1;
-  flex-shrink: 5;
-  filter: blur(100%);
+  flex: 1 5;
 }
 
 /*# sourceMappingURL=main.css.map */
